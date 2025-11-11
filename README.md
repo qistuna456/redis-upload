@@ -64,59 +64,57 @@ php artisan queue:work redis --tries=1
 php artisan serve
 ```
 
-🖱️ Usage
+## 🖱️ Usage
 
-🏠 Go to the homepage.
+- 🏠 Go to the homepage.
+- 📤 Click **Upload CSV** and select your CSV file.
+- 👀 Watch the **Recent Uploads** table update in real time.
+- Each row shows:
+  - 🆔 Upload ID
+  - 📄 File name
+  - 🔖 Status (`processing`, `completed`, `failed`)
+  - 📊 Progress (# processed / total)
+  - 🕒 Created & completed timestamps
 
-📤 Click Upload CSV and select your CSV file.
+---
 
-👀 Watch the Recent Uploads table update in real time.
+## 📄 CSV Format
 
-Each row shows:
+| Field |
+|-------|
+| 🔑 UNIQUE_KEY |
+| 🏷️ PRODUCT_TITLE |
+| 📝 PRODUCT_DESCRIPTION |
+| 🎨 STYLE# |
+| 🎨 SANMAR_MAINFRAME_COLOR |
+| 📏 SIZE |
+| 🌈 COLOR_NAME |
+| 💲 PIECE_PRICE |
 
-🆔 Upload ID
+**Requirements:**
 
-📄 File name
+- 🧹 Non-UTF-8 characters are automatically cleaned
+- 🔁 Idempotent: re-uploading the same file does not create duplicates
+- 🆕 Supports upsert via `UNIQUE_KEY`
 
-🔖 Status (processing, completed, failed)
+---
 
-📊 Progress (# processed / total)
+## 💡 Notes / Recommendations
 
-🕒 Created & completed timestamps
+- 🔧 Ensure Redis server is running for queue jobs
+- 🛑 Max upload size is 10MB by default (`file|max:10240` in validation)
+- 👀 Optional: Use Horizon to monitor queue jobs
+- ⚠️ For large CSVs, increase `upload_max_filesize` and `post_max_size` in `php.ini`
 
-📄 CSV Format
-Field
-🔑 UNIQUE_KEY
-🏷️ PRODUCT_TITLE
-📝 PRODUCT_DESCRIPTION
-🎨 STYLE#
-🎨 SANMAR_MAINFRAME_COLOR
-📏 SIZE
-🌈 COLOR_NAME
-💲 PIECE_PRICE
+---
 
-Requirements:
+## 📸 Screenshots
 
-🧹 Non-UTF-8 characters are automatically cleaned
+*(Optional: add screenshots of the UI and real-time updates here)*
 
-🔁 Idempotent: re-uploading the same file does not create duplicates
+---
 
-🆕 Supports upsert via UNIQUE_KEY
-
-💡 Notes / Recommendations
-
-🔧 Ensure Redis server is running for queue jobs
-
-🛑 Max upload size is 10MB by default (file|max:10240 in validation)
-
-👀 Optional: Use Horizon to monitor queue jobs
-
-⚠️ For large CSVs, increase upload_max_filesize and post_max_size in php.ini
-
-📸 Screenshots
-
-(Optional: add screenshots of the UI and real-time updates here)
-
-📜 License
+## 📜 License
 
 MIT © Qistuna Yusof
+
