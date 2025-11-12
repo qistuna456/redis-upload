@@ -110,7 +110,8 @@ php artisan serve
 
 ## 📸 Screenshots
 
-*(Optional: add screenshots of the UI and real-time updates here)*
+<img width="1187" height="596" alt="image" src="https://github.com/user-attachments/assets/09e2172e-33aa-421b-ad01-aa97943db599" />
+
 
 ---
 
