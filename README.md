@@ -1,4 +1,4 @@
-# 🖨️ YoPrint CSV Upload
+# 🖨️ Redis CSV Upload Progress
 
 A mini Laravel application that allows users to upload CSV files, processes them in the background, and displays real-time upload status. Built to demonstrate proficiency in Laravel, queues, and real-time updates.  
 
@@ -44,8 +44,8 @@ npm run build
 cp .env.example .env
 
 # 4️⃣ Set up your .env variables
-APP_NAME="YoPrint CSV Upload"
-APP_URL=http://yoprint.test
+APP_NAME="Redis CSV Upload"
+APP_URL=http://redis.test
 
 # Database (example SQLite)
 DB_CONNECTION=sqlite
