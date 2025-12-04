@@ -1,4 +1,4 @@
-# 🖨️ Redis CSV Upload Progress
+# 🖨️ Realtime CSV Upload Progress
 
 A mini Laravel application that allows users to upload CSV files, processes them in the background, and displays real-time upload status. Built to demonstrate proficiency in Laravel, queues, and real-time updates.  
 
